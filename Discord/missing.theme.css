@@ -1,0 +1,137 @@
+/**
+ * @name missing
+ * @author Custom
+ * @version 1.0.4
+ * @description findme
+ */
+
+:root {
+    /* Фоновое изображение (билборд) */
+    --background-image: url('missing.jpg');
+    
+    /* Цвета из Emacs / Alacritty конфигурации */
+    --emacs-bg: #1e1e1e;
+    --emacs-fg: #e0e0e0;
+    --emacs-region-bg: #000080;
+    --emacs-region-fg: #ffffff;
+    --emacs-comment: #3a3a3a;
+    --emacs-string: #78a97b;
+    --emacs-keyword: #688fbf;
+    --emacs-function: #dfb56c;
+    --emacs-variable: #e05f65;
+    --emacs-constant: #5ca7a8;
+    --emacs-mode-line-bg: #1b1c1e;
+    
+    /* Привязка к интерфейсу Discord с сохранением прозрачности для фона */
+    --background-primary: rgba(30, 30, 30, 0.65);             /* #1e1e1e с прозрачностью */
+    --background-secondary: rgba(27, 28, 30, 0.75);           /* В стиле mode-line */
+    --background-secondary-alt: rgba(58, 58, 58, 0.8);        /* В стиле mode-line-inactive */
+    --background-tertiary: rgba(20, 20, 20, 0.9);
+    --background-floating: #1b1c1e;
+    
+    /* Переопределение стандартных текстовых цветов Discord */
+    --text-normal: var(--emacs-fg);
+    --text-muted: #c0c0c0;
+    --text-link: var(--emacs-keyword);                         /* Ссылки цветом ключевых слов */
+    --text-positive: var(--emacs-string);
+    --text-danger: var(--emacs-variable);
+    
+    /* Интерактивные элементы, кнопки, пинги и фокусы */
+    --brand-experiment: var(--emacs-region-bg);                /* Кнопки цветом выделения текста */
+    --brand-experiment-560: var(--emacs-keyword);              /* Кнопки при наведении */
+    --interactive-normal: #c0c0c0;
+    --interactive-hover: var(--emacs-fg);
+    --interactive-active: var(--emacs-region-fg);
+    
+    /* Цвет выделения текста в самом клиенте */
+    --text-selection: var(--emacs-region-bg);
+}
+
+/* Делаем стандартные слои Discord прозрачными для отображения картинки */
+#app-mount,
+html,
+body,
+[class^="app_"],
+[class^="bg_"],
+[class^="wrapper_"] > [class^="inner_"],
+[class^="container_"],
+[class^="chat_"],s
+[class^="chatMainContent_"],
+[class^="sidebar_"],
+[class^="panels_"],
+[class^="membersWrap_"],
+[class^="members_"],
+[class^="privateChannels_"],
+[class^="scroller_"],
+[class^="pageWrapper_"] {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Наложение фонового изображения билборда */
+body {
+    background-image: var(--background-image) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Настройка основных панелей под полупрозрачный ретро-фон */
+[class^="sidebar_"] {
+    background-color: var(--background-secondary) !important;
+    border-right: 1px solid var(--emacs-comment);
+}
+
+[class^="chat_"] {
+    background-color: var(--background-primary) !important;
+}
+
+[class^="membersWrap_"], [class^="members_"] {
+    background-color: var(--background-secondary) !important;
+    border-left: 1px solid var(--emacs-comment);
+}
+
+/* Возвращаем нижнюю панель профиля и звонка в общий темный стиль */
+[class^="panels_"] {
+    background-color: rgba(27, 28, 30, 0.85) !important;
+    border-top: 1px solid var(--emacs-comment);
+}
+[class^="panels_"] * {
+    color: var(--emacs-fg) !important;
+}
+[class^="panels_"] button:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Возвращаем поле ввода в темный цвет (#1e1e1e) с рамкой цвета комментариев */
+[class^="channelTextArea_"] [class^="scrollableContainer_"] {
+    background-color: var(--emacs-bg) !important;
+    border: 1px solid var(--emacs-comment) !important;
+}
+[class^="channelTextArea_"] [class^="scrollableContainer_"] * {
+    color: var(--emacs-fg) !important; 
+}
+[class^="channelTextArea_"] [class^="placeholder_"] {
+    color: rgba(224, 224, 224, 0.4) !important;
+}
+
+/* Цвет выделения текста мышкой */
+::selection {
+    background: var(--emacs-region-bg) !important;
+    color: var(--emacs-region-fg) !important;
+}
+
+/* Стилизация верхнего статус-бара (канал/тема) под активную mode-line */
+[class^="title_"][class^="container_"] {
+    background-color: var(--emacs-mode-line-bg) !important;
+    border-bottom: 1px solid var(--emacs-comment);
+}
+
+/* Упоминания (пинги) подсвечиваются желтым из font-lock-function */
+[class^="mention_"] {
+    background-color: rgba(223, 181, 108, 0.15) !important;
+    color: var(--emacs-function) !important;
+}
+[class^="mention_"]:hover {
+    background-color: rgba(223, 181, 108, 0.25) !important;
+}

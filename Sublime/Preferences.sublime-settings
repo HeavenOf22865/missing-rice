@@ -1,0 +1,15 @@
+{
+	"color_scheme": "missing.sublime-color-scheme",
+	"default_font_size": 13,
+	"font_size": 13,
+	"caret_extra_top": 0,
+	"caret_extra_bottom": 0,
+	"caret_extra_width": 10,
+	"theme": "Adaptive.sublime-theme",
+	"adaptive_theme_custom_title_bar": true,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": true,
+}

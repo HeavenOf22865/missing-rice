@@ -1,0 +1,8 @@
+show=drun
+prompt=Run...
+gtk_dark=true
+allow_images=false
+image_size=20
+width=450
+lines=8
+location=center

@@ -1,0 +1,77 @@
+{
+    "name": "missing",
+    "author": "Custom",
+    "variables": {
+        "bg": "#1e1e1e",
+        "fg": "#c0c0c0",
+        "region_bg": "#5c354f",
+        "region_fg": "#e0e0e0",
+        "comment": "#707070",
+        "string": "#78a97b",
+        "keyword": "#688fbf",
+        "function": "#dfb56c",
+        "variable": "#e05f65",
+        "magenta": "#b18bb3",
+        "constant": "#5ca7a8",
+        "builtin": "#69c5c7",
+        "mode_line": "#1b1c1e"
+    },
+    "globals": {
+        "background": "var(bg)",
+        "foreground": "var(fg)",
+        "caret": "var(fg)",
+        "line_highlight": "var(mode_line)",
+        "selection": "var(region_bg)",
+        "selection_foreground": "var(region_fg)",
+        "inactive_selection": "var(comment)",
+        "gutter": "var(bg)",
+        "gutter_foreground": "var(comment)"
+    },
+    "rules": [
+        {
+            "name": "Comment",
+            "scope": "comment, punctuation.definition.comment",
+            "foreground": "var(comment)"
+        },
+        {
+            "name": "String",
+            "scope": "string, punctuation.definition.string",
+            "foreground": "var(string)"
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword, storage.type, storage.modifier",
+            "foreground": "var(keyword)"
+        },
+        {
+            "name": "Function name",
+            "scope": "entity.name.function, support.function, meta.function-call",
+            "foreground": "var(function)"
+        },
+        {
+            "name": "Variable",
+            "scope": "variable, variable.language, variable.parameter",
+            "foreground": "var(variable)"
+        },
+        {
+            "name": "Type",
+            "scope": "entity.name.type, entity.name.class, storage.type.string",
+            "foreground": "var(magenta)"
+        },
+        {
+            "name": "Constant",
+            "scope": "constant, constant.numeric, constant.language, constant.character",
+            "foreground": "var(constant)"
+        },
+        {
+            "name": "Built-in",
+            "scope": "support.type, support.class, support.constant",
+            "foreground": "var(builtin)"
+        },
+        {
+            "name": "Punctuation",
+            "scope": "punctuation.definition.parameters, punctuation.section.group",
+            "foreground": "var(fg)"
+        }
+    ]
+}
