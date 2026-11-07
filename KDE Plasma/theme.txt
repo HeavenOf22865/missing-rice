@@ -1,0 +1,8 @@
+- Global Theme used:
+	Reactionary 98 Dark
+- Icons:
+	SE98C
+- Pointers:
+	ModernXP2
+- decoration.svg:
+	Replace file at /home/<User>/.local/share/aurorae/themes/windows98-dark-aurorae/
