@@ -1,7 +1,7 @@
 * There was a name once that is now long forgotten
 * A song in the wind that has died with that day
 * She ran with star, it seemed like sky had no bottom
-* He great night came, it carried her away
+* The great night came, it carried her away
 * It said...
 
 * You know I'm with you in the dark,
